@@ -1,0 +1,24 @@
+<h1>Look at this one employee!</h2>
+
+Employee Name: <%=@employee.first_name%> <%=@employee.last_name%>
+<br>
+Also Known As: <%=@employee.alias%>
+<br>
+<%=@employee.first_name%> is a <%=@employee.title%> at the <%=@employee.office%> branch, and is proudly owned by <%= link_to @employee.dog.name, dog_path(@employee.dog)%>
+<br>
+Say hello to <%=@employee.first_name%>!
+<br>
+<br>
+<img style="width: 400px" src=<%=@employee.img_url%>>
+<br>
+Something not look right with our files? <%= link_to "Click here", edit_employee_path(@employee)%> to change our records!
+<br>
+<%=link_to "Let's see all them employees", employees_path%>
+<br>
+<br>
+<br>
+Has this employee been causing trouble? To delete them <br>
+<%= form_for @employee, method: :delete do |f| %>
+<%= f.submit "Click Here"%>
+<%end%>
+but be warned, any delete is final!

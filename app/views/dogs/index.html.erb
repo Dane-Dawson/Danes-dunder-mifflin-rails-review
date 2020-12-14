@@ -1,0 +1,14 @@
+<h1> Look at all these dogs!</h1>
+
+<ul>
+<% @dogs.each do |dog| %>
+<li><%= link_to dog.name, dog_path(dog)%></li>
+<% end %>
+</ul>
+<br>
+What? You want to see people?
+<br>
+...why?
+<br>
+<br>
+Whatever, <%= link_to "here you go I guess...", employees_path%>

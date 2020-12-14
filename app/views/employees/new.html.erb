@@ -1,0 +1,25 @@
+<h1> Join the team! </h1>
+
+<%= form_for(@employee) do |f| %>
+  <label>Employee first name:</label><br>
+  <%= f.text_field :first_name %><br>
+
+  <label>Employee last name:</label><br>
+  <%= f.text_field :last_name %><br>
+
+  <label>Employee alias:</label><br>
+  <%= f.text_field :alias %><br>
+
+  <label>Employee office:</label><br>
+  <%= f.text_field :office %><br>
+
+  <label>Employee title:</label><br>
+  <%= f.text_field :title %><br>
+
+  <label>Employee photo url:</label><br>
+  <%= f.text_field :img_url %><br>
+
+<label>Which dog does this employee belong to? </label>
+<%= f.collection_select :dog_id, Dog.all, :id, :name %><br>
+  <%= f.submit %>
+<% end %>

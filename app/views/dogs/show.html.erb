@@ -1,0 +1,16 @@
+<h1>Look at this one dog!</h2>
+
+<h3><%=@dog.name%></h3>
+<br>
+<%=@dog.name%> is a beautiful <%=@dog.breed%> and the proud owner of
+<br>
+<ul>
+<% @dog.employees.each do |employee| %>
+<li><%= link_to employee.first_name, employee_path(employee)%></li>
+<% end %>
+</ul>
+<br>
+Not to bad for a <%=@dog.age%> dog of that age!
+<br>
+
+<%=link_to "Let's see all them dogs", dogs_path%>

@@ -1,0 +1,11 @@
+<h1>Look at all these employees!</h2>
+
+<ul>
+<% @employees.each do |employee| %>
+<li><%= link_to employee.first_name, employee_path(employee)%></li>
+<% end %>
+</ul>
+<%= link_to "Don't see who you're looking for? Make an employee here!", new_employee_path%>
+<br>
+Want to see the true power behind the throne?
+<%= link_to "Click here", dogs_path%> to see who really runs the show.
