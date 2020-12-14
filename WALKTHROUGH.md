@@ -148,6 +148,7 @@ I used another example of label for this form. This is (for our purposes) interc
 
 For a refresher on the collection_select, see below vVv
 
+```
 <%# How to use collection_select:
 collection_select takes in (up to) 5 arguements.
 collection_select(arg1, arg2, arg3, arg4, arg5)
@@ -164,6 +165,7 @@ Because we are in a form for @playdate, we can omit the first arguement %>
                 <%# 2-Value sent||3-collection||4-value captured||5-display value %>
 <%= f.collection_select :kitten_id, Kitten.all, :id, :name %>
 <% end %>
+```
 
 Now that we have an action that gets us connected to a form we can fill out with information, let's add the create action to actually get this data to persist in our DB. 
 
@@ -174,6 +176,7 @@ Quick refresher for the basic syntax of this method
 params.require(arg1).permit(arg2, arg3, etc)
 ~~~
 arg1 = The name of the key/object within the params that your information is packaged. In our case, it matches what we make our form_for target.
+<br>
 arg2-infin = The name(s) of the allowed keys your params will ultimately hold. This needs to include *any* value you need when calling these params. For us, it's every attribute for an Employee (which we can find again on the schema!)
 
 ```
@@ -260,9 +263,11 @@ views/employees/new
         <li><%= message %></li>
       <% end %>
     </ul>
+    <p>Please adjust your new employee file accordingly and try again! </p>
   </div>
 <% end %>
 ```
+This checks if the employee being sent in has errors (which should only happen if you try to create a new employee and it fails), and, if there are errors, it gives a count of the number of issues and says what they are.
 
 There we go! That should be all the deliverables!
 
