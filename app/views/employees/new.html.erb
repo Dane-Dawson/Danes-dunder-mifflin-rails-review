@@ -1,5 +1,16 @@
 <h1> Join the team! </h1>
 
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being created:</h3>
+    <ul>
+      <% @employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@employee) do |f| %>
   <label>Employee first name:</label><br>
   <%= f.text_field :first_name %><br>

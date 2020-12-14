@@ -13,8 +13,11 @@ class EmployeesController < ApplicationController
     
     def create
         @employee = Employee.create(employee_params)
-        
+        if @employee.valid?
         redirect_to employees_path
+        else 
+        render new_employee_path
+        end
     end
     
     def edit

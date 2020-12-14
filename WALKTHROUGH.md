@@ -225,5 +225,43 @@ Has this employee been causing trouble? To delete them <br>
 <%= f.submit "Click Here"%>
 <%end%>
 ```
+The last thing we will do is add in Dwight's validation concerns.
+Add the validation check inside the model that you are checking (ours is the Employee)
+Employee model
+```
+    validates :alias, uniqueness: true
+    validates :title, uniqueness: true
+```
+
+This makes sure that we can't create a model *unless* it's title and alias are unique, but we need to write something in our code to catch if a model is invalid! We will add the following lines to our EmployeesController create method (which is where we would do the validation check)
+
+EmployeesController
+```
+def create
+    @employee = Employee.create(employee_params)
+    if @employee.valid?
+    redirect_to employees_path
+    else 
+    render new_employee_path
+    end
+end
+```
+And I added this conditional render for displaying the error messages. Fancy! When it does the redirect to new_employee_path on the else, it carries with it the @employee with the error messages that prevented it from saving.
+
+views/employees/new
+```
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being created:</h3>
+    <ul>
+      <% @employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+```
+
+There we go! That should be all the deliverables!
 
 This is not the fanciest way to do things, but it is one of the easiest ways to start! Included is fully functional code that I took my examples out of, some with minor tweaking for styling/being witty but the core functionality holds true. I also added some links between pages to let it flow a bit more naturally.
