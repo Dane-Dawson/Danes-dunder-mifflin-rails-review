@@ -1,6 +1,8 @@
+I have created a (more or less) step by step walkthrough of each part of the Dunder Mifflin lab. This is not all inclusive for every single thing I typed, but I tried to be more thorough on describing all the steps needed. If you can finish *this* lab, you have all the tools you need for your code challenge! 
+
 From the beginning!
 
-vVvVvV~Inital setup, checking routes and relationships~VvVvVv
+vVvVvV Inital setup, checking routes and relationships VvVvVv
 
 Let's get rails installed by running
 ```
@@ -38,7 +40,7 @@ rails s
 ```
 
 
-vVvVvV~Let's get to the MVC magic!~VvVvVv
+vVvVvV Let's get to the MVC magic! VvVvVv
 
 First place we will start is on controllers
 
@@ -107,7 +109,7 @@ views/dogs/show
 
 Go ahead and do all these steps for the EmployeesController as well, but pay attention to what information is wanted in the README.
 
-vVvVvV~Using forms to create and update models~VvVvVv
+vVvVvV Using forms to create and update models VvVvVv
 
 The README tells us that the goal is to "be able to create AND edit an Employee, and only be able to select 1 dog from a list of already existing dogs."
 
