@@ -1,5 +1,11 @@
+
+<h1>Guided Walkthrough</h2>
 I have created a (more or less) step by step walkthrough of each part of the Dunder Mifflin lab. This is not all inclusive for every single thing I typed, but I tried to be more thorough on describing all the steps needed. If you can finish *this* lab, you have all the tools you need for your code challenge! 
 
+Here is the unaltered repository, my repo here is solved already.
+https://github.com/learn-co-curriculum/dunder-mifflin-rails-review
+
+Ready? Here we go!
 From the beginning!
 
 vVvVvV Inital setup, checking routes and relationships VvVvVv
